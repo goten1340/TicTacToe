@@ -8,9 +8,9 @@ function placeXOrO(squareNumber) {
     //This condiiton ensures a square hasn't been selected already.
     //The .some() method is used to check each element of selectedSqaure array to
     //see if it contains the square number clicked on.
-if (!selectedSquares.some(Element => Element.includes(squareNumber))){
+if (!selectedSquares.some(element => element.includes(squareNumber))){
     //This variable retrieves the html element id that was clicked.
-    let select = document.getElementById(squareNumber) 
+    let select = document.getElementById(squareNumber);
         //This condiiton checks who's turn it is.
     if (activePlayer === 'X') {
         //if activePlayer is equal to 'X, the x.png is placed in HTML.
@@ -56,7 +56,7 @@ if (!selectedSquares.some(Element => Element.includes(squareNumber))){
             //A random number between 0 and 8 is selected
             pickASquare=string(Math.floor(Math.random() * 9));
             //If the random number evaluates returns true, the square hasn't been slected yet.
-            if (placeXOrO(pickASquare)){
+            if (placeXOrO(pickASquare)) {
                 //This line calls the function.
                 placeXOrO(pickASquare);
                 //This changes our boolean and ends the loop.
@@ -98,6 +98,7 @@ if (!selectedSquares.some(Element => Element.includes(squareNumber))){
                     else if (arrayIncludes('0O','4O','8O')) {drawWinLine(100,100,520,520);}
                     // This condition checks for tie. If none of the above conditions register
                     //and 9 squares are slected, the code executes.
+                }
                     else if (selectedSquares.length>=9) {
                         //This function plays the tie game sound.
                         audio('./media/tie.mp3');
@@ -113,13 +114,14 @@ if (!selectedSquares.some(Element => Element.includes(squareNumber))){
                             // If the 3 variables we pass are all included in our array true is
                             //returned and our else if condition executes the drawWinLine function.
                             if (a === true && b === true && c === true) {return true;}
+                        }
 
                             //This function makes our body element temporarily unclickable.
                             function disableClick() {
                                 //This makes our body unclickable.
                                 body.style.pointerEvents ='none';
                                 //This makes our body clickable again after 1 second.
-                                setTimeout(function()) {body.style.pointerEvents = 'auto';}, 1000);
+                                setTimeout(function() {body.style.pointerEvents = 'auto';}, 1000);
 
                                 //This function takes a string parameter of the path you set earlier for
                                 //placement sound ('.media/place.mp3)
@@ -131,7 +133,7 @@ if (!selectedSquares.some(Element => Element.includes(squareNumber))){
 
 
                                 //This function utilizes html canvas to draw win lines.
-                                functio drawWinLine(coordX1,coordY1,coordX2,coordY2) {
+                                function drawWinLine(coordX1,coordY1,coordX2,coordY2) {
                                     //This line accesses our html canvas element.
                                     const canvas = document.getElementById('win-lines');
                                     //This line gives us access to methods and properties to use on canvas.
@@ -178,7 +180,7 @@ if (!selectedSquares.some(Element => Element.includes(squareNumber))){
                                             if (x >=x2 && y >= y2) {cancelAnimationFrame(animationLoop);}
                                             //This condition is similar to the one above.
                                             //It was necessary for the 6,4,2 win condition.
-                                            if (x1 <=x2 && y1 >=y2) {
+                                         } if (x1 <=x2 && y1 >=y2) {
                                                 if(x<x2) {x+=10;}
                                                 if (y >y2) {y-=10; }
                                                 if (x>=x2&& y<=y2) { cancelAnimationFrame(animationLoop);}
@@ -200,7 +202,8 @@ if (!selectedSquares.some(Element => Element.includes(squareNumber))){
                                             //This line waits 1 second.
                                             //Then, clears canvas, resets game, and allows clicking();},1000);
                                             //This function resets the game in a tie or a win.
-                                            function resetGame() {
+                                           setTimeout(function () { clear();resetGame();},1000)
+                                           function resetGame() {
                                                 //This for loop iterates through each HTML square element
                                                 for(let i =0;i<9;i++) {
                                                     //This variable gets the html element of i.
