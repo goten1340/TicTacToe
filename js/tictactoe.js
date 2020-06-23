@@ -65,7 +65,7 @@ function computersTurn() {
                 placeXOrO(pickASquare);
                 //This changes our boolean and ends the loop.
                 success=true;
-            );
+            ;
         }
     }        
 }               //This function parses the slectedSquares array to search for win conditions.
