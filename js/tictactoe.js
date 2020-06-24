@@ -70,6 +70,15 @@ function computersTurn() {
     }        
 }               //This function parses the slectedSquares array to search for win conditions.
                         //drawwinLine function is called to draw line if condition is met.
+                        function arrayIncludes(squareA, squareB, squareC) {
+                            //The next 3 variables will be used to check for 3 in a row.
+                            const a = selectedSquares.includes(squareA);
+                            const b = selectedSquares.includes(squareB);
+                            const c = selectedSquares.includes(squareC);
+                            // If the 3 variables we pass are all included in our array true is
+                            //returned and our else if condition executes the drawWinLine function.
+                            if (a === true && b === true && c === true) {return true;}
+                        }
                 function checkWinConditions() {
                     //x 0,1,2 condition.
                     if (arrayIncludes('0X','1X','2X')) { drawWinLine(50,100,558,100);}
@@ -104,15 +113,6 @@ function computersTurn() {
                     //O 0,4,8 condition.
                     else if (arrayIncludes('0O','4O','8O')) {drawWinLine(100,100,520,520);}
                     // This condition checks for tie. If none of the above conditions register
-                    //and 9 squares are slected, the code executes.
-                
-                    else if (selectedSquares.length>=9) {
-                        //This function plays the tie game sound.
-                        audio('./media/tie.mp3');
-                        //This function sets a .3 second timer before the resetGame is called.
-                        setTimeout(function () {resetGame();},1000);
-                        //This function checks if an array includes 3 strings.
-                        //it is used to check for each win condition.
                         function arrayIncludes(squareA, squareB, squareC) {
                             //The next 3 variables will be used to check for 3 in a row.
                             const a = selectedSquares.includes(squareA);
