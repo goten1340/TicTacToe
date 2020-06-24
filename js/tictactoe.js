@@ -123,7 +123,7 @@ function computersTurn() {
                             if (a === true && b === true && c === true) {return true;}
                         }
                     }
-                }            //This function makes our body element temporarily unclickable.
+                            //This function makes our body element temporarily unclickable.
                              function disableClick() {
                                 //This makes our body unclickable.
                                 body.style.pointerEvents ='none';
