@@ -1,0 +1,1 @@
+# TicTacToe: Created a web app that utilizes the media folder to add sound for example when the player wins a game of tic tac toe they will hear a winning bell, because of the reference to the mp3 file. Also uses images to display the X and O's.
