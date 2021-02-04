@@ -1,1 +1,1 @@
-# TicTacToe: Created a web app that utilizes the media folder to add sound for example when the player wins a game of tic tac toe they will hear a winning bell, because of the reference to the mp3 file. Also uses images to display the X and O's.
+# TicTacToe Web App: Fully functional tic-tac-toe game built with JavaScript, HTML5, and CSS3. The user competes against a computer player. Included sound effects and animations for each move
